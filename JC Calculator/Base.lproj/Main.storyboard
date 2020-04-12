@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,403 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JC_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAh-Q8-0NV">
+                                <rect key="frame" x="16" y="20" width="164" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="7mV-nl-qeG"/>
+                                    <constraint firstAttribute="height" constant="41" id="SDe-3Q-7m0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="juan-cajamarca" translatesAutoresizingMaskIntoConstraints="NO" id="q1G-Ei-z5N">
+                                <rect key="frame" x="113" y="269.5" width="149" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="aU5-HU-XDV"/>
+                                    <constraint firstAttribute="width" constant="149" id="dzU-xg-4ie"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1d-vy-SSo">
+                                <rect key="frame" x="57.5" y="492" width="260" height="45"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="EII-Np-PmA"/>
+                                    <constraint firstAttribute="height" constant="45" id="Ig5-51-3lr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Go to calculator app">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5Fa-Hn-OOq" kind="show" id="9XP-Uv-w4e"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered By Juan Cajamarca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAM-qq-7Ps">
+                                <rect key="frame" x="78.5" y="545" width="218" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PDu-xw-7W7"/>
+                                    <constraint firstAttribute="width" constant="218" id="g6M-BV-6NT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="q1G-Ei-z5N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0cq-01-qcM"/>
+                            <constraint firstItem="cAM-qq-7Ps" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Ff-sC-Q0Z"/>
+                            <constraint firstItem="cAM-qq-7Ps" firstAttribute="top" secondItem="N1d-vy-SSo" secondAttribute="bottom" constant="8" id="9R6-kn-c5l"/>
+                            <constraint firstItem="q1G-Ei-z5N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UeC-Ni-pZM"/>
+                            <constraint firstItem="PAh-Q8-0NV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="aMk-r7-WII"/>
+                            <constraint firstItem="PAh-Q8-0NV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cVh-zb-0US"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N1d-vy-SSo" secondAttribute="bottom" constant="130" id="gnc-SZ-Es2"/>
+                            <constraint firstItem="N1d-vy-SSo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yd0-dw-8lG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="goToAppButton" destination="N1d-vy-SSo" id="Sgq-NP-2Gy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="132.68365817091455"/>
+        </scene>
+        <!--CalculatorVC-->
+        <scene sceneID="NMM-0w-5YK">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="5Fa-Hn-OOq" customClass="CalculatorVC" customModule="JC_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bhb-dM-S5x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFk-Ta-Trx">
+                                <rect key="frame" x="0.0" y="169" width="375" height="498"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="P21-oR-74Q">
+                                        <rect key="frame" x="27.5" y="50.5" width="320" height="397"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cXJ-Op-YJs">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBX-QS-aXG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.22745098039215686" blue="0.27058823529411763" alpha="0.10139744718309859" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="3ql-zG-fkK"/>
+                                                            <constraint firstAttribute="width" constant="65" id="jrO-bf-LlT"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="C">
+                                                            <color key="titleColor" red="0.96078431372549022" green="0.22745098039215686" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1R-dE-WBQ">
+                                                        <rect key="frame" x="85" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.96078431372549022" green="0.22745098039215686" blue="0.27058823529411763" alpha="0.10464348590985915" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="cbj-r4-AhB"/>
+                                                            <constraint firstAttribute="width" constant="65" id="gaM-W9-pie"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="CE">
+                                                            <color key="titleColor" red="0.96078431372549022" green="0.22745098039215686" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZf-aQ-uib">
+                                                        <rect key="frame" x="170" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42352941176470588" green="0.42352941176470588" blue="1" alpha="0.1525913292197183" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="65" id="l7V-ce-Pbf"/>
+                                                            <constraint firstAttribute="height" constant="65" id="qPU-dc-76D"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="1/x">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc4-Vf-Eax">
+                                                        <rect key="frame" x="255" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="hQq-nC-xvd"/>
+                                                            <constraint firstAttribute="width" constant="65" id="lS3-nG-uEi"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="/">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Spe-Ok-uny">
+                                                <rect key="frame" x="0.0" y="83" width="320" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-dK-rIK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="65" id="SvS-2M-HSD"/>
+                                                            <constraint firstAttribute="height" constant="65" id="ofD-kU-FgQ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahJ-PM-Cnc">
+                                                        <rect key="frame" x="85" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="Kx9-XG-1C0"/>
+                                                            <constraint firstAttribute="width" constant="65" id="zOR-Ik-Gux"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDg-bm-io7">
+                                                        <rect key="frame" x="170" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="65" id="Lsh-eO-SHG"/>
+                                                            <constraint firstAttribute="height" constant="65" id="Vj1-tK-qS7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMv-EA-YgS">
+                                                        <rect key="frame" x="255" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="KxP-r5-dT9"/>
+                                                            <constraint firstAttribute="width" constant="65" id="eOf-up-azy"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="x">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fly-KV-5Nm">
+                                                <rect key="frame" x="0.0" y="166" width="320" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uq-Ap-vhf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="65" id="9GM-2L-2I4"/>
+                                                            <constraint firstAttribute="height" constant="65" id="lLR-Pd-VJy"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0w0-8b-ZYc">
+                                                        <rect key="frame" x="85" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="65" id="XFT-R0-eIK"/>
+                                                            <constraint firstAttribute="height" constant="65" id="msR-8p-0eG"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHw-wW-pfb">
+                                                        <rect key="frame" x="170" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="65" id="1R1-db-zGP"/>
+                                                            <constraint firstAttribute="height" constant="65" id="6j8-i3-7Ge"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa4-R3-3vy">
+                                                        <rect key="frame" x="255" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="65" id="dCr-rW-eJe"/>
+                                                            <constraint firstAttribute="height" constant="65" id="pTV-mI-qLN"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="-">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uvh-qM-PS3">
+                                                <rect key="frame" x="0.0" y="249" width="320" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-Qs-ZTa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="eXM-Z6-g2S"/>
+                                                            <constraint firstAttribute="width" constant="65" id="ero-aS-siV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wre-9l-zab">
+                                                        <rect key="frame" x="85" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="6OA-rV-qAK"/>
+                                                            <constraint firstAttribute="width" constant="65" id="mim-nG-EBb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRB-nf-lQB">
+                                                        <rect key="frame" x="170" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="Sew-Ex-A2d"/>
+                                                            <constraint firstAttribute="width" constant="65" id="XJd-6d-t9V"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24Q-Qf-Dfh">
+                                                        <rect key="frame" x="255" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="65" id="5Kr-vl-7ek"/>
+                                                            <constraint firstAttribute="height" constant="65" id="bKK-9Q-scj"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="+">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="orN-69-yoL">
+                                                <rect key="frame" x="0.0" y="332" width="320" height="65"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5m-j7-U43">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="0ii-DI-SAl"/>
+                                                            <constraint firstAttribute="height" constant="65" id="QRV-tR-cNM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="0">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYe-4Y-Wn2">
+                                                        <rect key="frame" x="170" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" red="0.42467236518859863" green="0.42467236518859863" blue="1" alpha="0.14763974471267605" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="IKI-fp-esZ"/>
+                                                            <constraint firstAttribute="width" constant="65" id="hCc-M7-P5c"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title=".">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOO-q5-p46">
+                                                        <rect key="frame" x="255" y="0.0" width="65" height="65"/>
+                                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="65" id="Rqc-2Z-NnE"/>
+                                                            <constraint firstAttribute="width" constant="65" id="ftO-V1-8MP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <state key="normal" title="=">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="498" id="YM5-MR-nkL"/>
+                                    <constraint firstItem="P21-oR-74Q" firstAttribute="centerY" secondItem="dFk-Ta-Trx" secondAttribute="centerY" id="cjb-l5-3jo"/>
+                                    <constraint firstItem="P21-oR-74Q" firstAttribute="centerX" secondItem="dFk-Ta-Trx" secondAttribute="centerX" id="sWW-jm-gzo"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12,545" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Ud-Zrs">
+                                <rect key="frame" x="16" y="20" width="343" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Og4-8S-N3n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ynf-Ud-Zrs" firstAttribute="top" secondItem="rXs-MQ-jzx" secondAttribute="top" constant="20" id="1nG-EO-ImD"/>
+                            <constraint firstItem="dFk-Ta-Trx" firstAttribute="trailing" secondItem="rXs-MQ-jzx" secondAttribute="trailing" id="2NI-8R-oJf"/>
+                            <constraint firstItem="ynf-Ud-Zrs" firstAttribute="leading" secondItem="rXs-MQ-jzx" secondAttribute="leading" constant="16" id="LeM-uN-Czj"/>
+                            <constraint firstItem="dFk-Ta-Trx" firstAttribute="bottom" secondItem="rXs-MQ-jzx" secondAttribute="bottom" id="Q0W-xR-Qbl"/>
+                            <constraint firstItem="dFk-Ta-Trx" firstAttribute="leading" secondItem="rXs-MQ-jzx" secondAttribute="leading" id="dj2-jO-efq"/>
+                            <constraint firstItem="rXs-MQ-jzx" firstAttribute="trailing" secondItem="ynf-Ud-Zrs" secondAttribute="trailing" constant="16" id="vtq-KR-Szy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rXs-MQ-jzx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="w48-Ct-v47"/>
+                    <connections>
+                        <outlet property="ButtonPoi" destination="LYe-4Y-Wn2" id="XF5-wn-ldQ"/>
+                        <outlet property="button0" destination="c5m-j7-U43" id="Pbn-bM-bSU"/>
+                        <outlet property="button1" destination="hJz-Qs-ZTa" id="H6I-de-xB9"/>
+                        <outlet property="button1X" destination="ZZf-aQ-uib" id="v9P-l9-lfP"/>
+                        <outlet property="button2" destination="Wre-9l-zab" id="CSV-LJ-VxJ"/>
+                        <outlet property="button3" destination="QRB-nf-lQB" id="8dZ-tW-ZnT"/>
+                        <outlet property="button4" destination="1uq-Ap-vhf" id="CpX-vt-urJ"/>
+                        <outlet property="button5" destination="0w0-8b-ZYc" id="c8a-UM-PIL"/>
+                        <outlet property="button6" destination="aHw-wW-pfb" id="Sv4-LH-CUS"/>
+                        <outlet property="button7" destination="OCc-dK-rIK" id="Zvb-xk-JyU"/>
+                        <outlet property="button8" destination="ahJ-PM-Cnc" id="h7C-Ne-roa"/>
+                        <outlet property="button9" destination="wDg-bm-io7" id="wLe-A4-zni"/>
+                        <outlet property="buttonC" destination="pBX-QS-aXG" id="NTc-D0-ijF"/>
+                        <outlet property="buttonCE" destination="g1R-dE-WBQ" id="d1f-6o-4nt"/>
+                        <outlet property="buttonDiv" destination="rc4-Vf-Eax" id="Mgg-AX-MD7"/>
+                        <outlet property="buttonEqual" destination="kOO-q5-p46" id="mIO-Hg-u1l"/>
+                        <outlet property="buttonMin" destination="Xa4-R3-3vy" id="nvG-hM-6lS"/>
+                        <outlet property="buttonPlus" destination="24Q-Qf-Dfh" id="w7s-be-htI"/>
+                        <outlet property="buttonX" destination="cMv-EA-YgS" id="Cjm-ar-Iem"/>
+                        <outlet property="label" destination="ynf-Ud-Zrs" id="C8A-JV-2IN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gC-5e-KEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141.5999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="juan-cajamarca" width="357" height="309.5"/>
+    </resources>
 </document>
